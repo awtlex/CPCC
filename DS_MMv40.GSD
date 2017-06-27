@@ -1,0 +1,1600 @@
+;===========================================================
+; GSD File  	: DS_MMv34a.GSD
+; Support	: Freeze_Mode_supp, Sync_Mode_supp, Auto_Baud_supp,12Mbit/s
+; Order Number	: PB-B-MM/V34
+; Date  	: Aug.04.2009
+; Revision	: "V3.4a"
+;===========================================================
+#Profibus_DP
+;  User-Parameter-Definition
+PrmText									= 0
+Text(0)									= "2400"
+Text(1)									= "4800"
+Text(2)									= "9600"
+Text(3)									= "19.2K"
+Text(4)									= "38.4K"
+Text(5)									= "57.6K"
+;Text(6)		  							= "115.2K "
+;Text(7)									= "230.4K "
+;Text(8)									= "460.8K "
+Text(9)="300 "
+Text(10)="600 "
+Text(11)="1200 "
+EndPrmText
+PrmText									= 1
+Text(0)									= "8 DataLen,1 StopBit,No Parity"
+Text(1)									= "8 DataLen,1 StopBit,Even Parity"
+Text(2)									= "8 DataLen,1 StopBit,Odd Parity"
+Text(3)									= "8 DataLen,2 StopBit,No Parity"
+EndPrmText
+PrmText									= 2
+Text(0)									= "Not Monitor Slave Status"
+Text(1)									= "Monitor Slave Status(8 Bits)"
+Text(2)									= "Monitor Slave Status(8 Bytes)"
+Text(3)									= "Monitor Slave Status(16 Bits)"
+Text(4)									= "Monitor Slave Status(16 Bytes)"
+Text(5)									= "Monitor Slave Status(24 Bits)"
+Text(6)									= "Monitor Slave Status(24 Bytes)"
+Text(7)									= "Monitor Slave Status(32 Bits)"
+Text(8)									= "Monitor Slave Status(32 Bytes)"
+EndPrmText
+PrmText									= 3
+Text(0)									= "Write always"
+Text(1)									= "Write on change"
+EndPrmText
+PrmText									= 4
+Text(0)									= "Time of Reply"
+Text(1)									= "Same Interval"
+EndPrmText
+PrmText									= 7
+Text(3)									= "read  4xxxx"
+Text(4)									= "read  3xxxx"
+EndPrmText
+PrmText									= 8
+Text(15)								= "write  0xxxx"
+EndPrmText
+PrmText									= 9
+Text(16)								= "write  4xxxx"
+EndPrmText
+PrmText									= 10
+Text(1)									= "At MD_scan End"
+Text(2)									= "At Evry MD End"
+EndPrmText
+PrmText									= 11
+Text(1)									= "10ms"
+Text(2)									= "20ms"
+Text(3)									= "30ms"
+Text(4)									= "40ms"
+Text(5)									= "50ms"
+Text(6)									= "60ms"
+Text(8)									= "80ms"
+Text(10)								= "100ms"
+Text(12)								= "120ms"
+Text(15)								= "150ms"
+Text(20)								= "200ms"
+Text(25)								= "250ms"
+Text(30)								= "300ms"
+Text(35)								= "350ms"
+Text(40)								= "400ms"
+Text(45)								= "450ms"
+Text(50)								= "500ms"
+Text(55)								= "550ms"
+Text(60)								= "600ms"
+Text(65)								= "650ms"
+Text(70)								= "700ms"
+Text(75)								= "750ms"
+Text(80)								= "800ms"
+Text(85)								= "850ms"
+Text(90)								= "900ms"
+Text(95)								= "950ms"
+Text(100)								= "1000ms"
+Text(255)								= "Waiting........"
+EndPrmText
+
+ExtUserPrmData						= 0 "Baudrate"
+Unsigned8 2 0-11
+Prm_Text_Ref						= 0
+EndExtUserPrmData
+ExtUserPrmData						= 1 "Parity"
+Unsigned8 0 0-3
+Prm_Text_Ref						= 1
+EndExtUserPrmData
+ExtUserPrmData						= 2 "Status of Slave Monitoring"
+Unsigned8 0 0-8
+Prm_Text_Ref						= 2
+EndExtUserPrmData
+ExtUserPrmData						= 3 "Write Mode"
+bit(7) 0 0-1
+Prm_Text_Ref						= 3
+EndExtUserPrmData
+ExtUserPrmData						= 4 "MODBUS No:"
+Unsigned8 0 0-255
+EndExtUserPrmData
+ExtUserPrmData						= 5 "Start_address:"
+Unsigned16 0 0-65535
+EndExtUserPrmData
+ExtUserPrmData						= 6 "Timer_mode:"
+bit(6) 0 0-1
+Prm_Text_Ref						= 4
+EndExtUserPrmData
+ExtUserPrmData						= 10 "DataUpdateMode"
+BitArea(0-1) 1 1-2
+Prm_Text_Ref						= 10
+EndExtUserPrmData
+ExtUserPrmData						= 11 "numbers:"
+Unsigned8 8 1-8
+EndExtUserPrmData
+ExtUserPrmData						= 12 "numbers:"
+Unsigned8 16 1-16
+EndExtUserPrmData
+ExtUserPrmData						= 13 "numbers:"
+Unsigned8 24 1-24
+EndExtUserPrmData
+ExtUserPrmData						= 14 "numbers:"
+Unsigned8 32 1-32
+EndExtUserPrmData
+ExtUserPrmData						= 15 "numbers:"
+Unsigned8 40 1-40
+EndExtUserPrmData
+ExtUserPrmData						= 16 "numbers:"
+Unsigned8 48 1-48
+EndExtUserPrmData
+ExtUserPrmData						= 17 "numbers:"
+Unsigned8 56 1-56
+EndExtUserPrmData
+ExtUserPrmData						= 18 "numbers:"
+Unsigned8 64 1-64
+EndExtUserPrmData
+ExtUserPrmData						= 19 "numbers:"
+Unsigned8 72 1-72
+EndExtUserPrmData
+ExtUserPrmData						= 20 "numbers:"
+Unsigned8 80 1-80
+EndExtUserPrmData
+ExtUserPrmData						= 21 "numbers:"
+Unsigned8 88 1-88
+EndExtUserPrmData
+ExtUserPrmData						= 22 "numbers:"
+Unsigned8 96 1-96
+EndExtUserPrmData
+ExtUserPrmData						= 23 "numbers:"
+Unsigned8 104 1-104
+EndExtUserPrmData
+ExtUserPrmData						= 24 "numbers:"
+Unsigned8 112 1-112
+EndExtUserPrmData
+ExtUserPrmData						= 25 "numbers:"
+Unsigned8 120 1-120
+EndExtUserPrmData
+ExtUserPrmData						= 26 "numbers:"
+Unsigned8 128 1-128
+EndExtUserPrmData
+ExtUserPrmData						= 27 "numbers:"
+Unsigned8 136 1-136
+EndExtUserPrmData
+ExtUserPrmData						= 28 "numbers:"
+Unsigned8 144 1-144
+EndExtUserPrmData
+ExtUserPrmData						= 29 "numbers:"
+Unsigned8 152 1-152
+EndExtUserPrmData
+ExtUserPrmData						= 30 "numbers:"
+Unsigned8 160 1-160
+EndExtUserPrmData
+ExtUserPrmData						= 31 "numbers:"
+Unsigned8 168 1-168
+EndExtUserPrmData
+ExtUserPrmData						= 32 "numbers:"
+Unsigned8 176 1-176
+EndExtUserPrmData
+ExtUserPrmData						= 33 "numbers:"
+Unsigned8 184 1-184
+EndExtUserPrmData
+ExtUserPrmData						= 34 "numbers:"
+Unsigned8 192 1-192
+EndExtUserPrmData
+ExtUserPrmData						= 35 "numbers:"
+Unsigned8 200 1-200
+EndExtUserPrmData
+ExtUserPrmData						= 36 "numbers:"
+Unsigned8 208 1-208
+EndExtUserPrmData
+ExtUserPrmData						= 37 "numbers:"
+Unsigned8 216 1-216
+EndExtUserPrmData
+ExtUserPrmData						= 38 "numbers:"
+Unsigned8 224 1-224
+EndExtUserPrmData
+ExtUserPrmData						= 39 "numbers:"
+Unsigned8 232 1-232
+EndExtUserPrmData
+ExtUserPrmData						= 40 "numbers:"
+Unsigned8 240 1-240
+EndExtUserPrmData
+ExtUserPrmData						= 41 "numbers:"
+Unsigned8 248 1-248
+EndExtUserPrmData
+ExtUserPrmData						= 42 "Timer_Value"
+Unsigned8 50 1-255
+Prm_Text_Ref						= 11
+EndExtUserPrmData
+
+; Unit-Definition-List:
+GSD_Revision						= 2
+Vendor_Name							=" DS co. ltd."
+Model_Name							=" PB-B-MM/V40"
+Revision								=" V1.2"
+Ident_Number						= 0x0080
+Protocol_Ident						= 0
+Station_Type						= 0
+Hardware_Release					= "V1.0"
+Software_Release					= "V2.0"
+9.6_supp								= 1
+19.2_supp								= 1
+45.45_supp							= 1
+93.75_supp							= 1
+187.5_supp							= 1
+500_supp								= 1
+1.5M_supp								= 1
+3M_supp									= 1
+6M_supp									= 1
+12M_supp								= 1
+MaxTsdr_9.6							= 60
+MaxTsdr_19.2						= 60
+MaxTsdr_45.45						= 250
+MaxTsdr_93.75						= 60
+MaxTsdr_187.5						= 60
+MaxTsdr_500							= 100
+MaxTsdr_1.5M						= 150
+MaxTsdr_3M=250
+MaxTsdr_6M=450
+MaxTsdr_12M=800
+Implementation_Type				= "SPC3"
+Bitmap_Device						= "DS232"
+;"DPLINK_N"
+Bitmap_SF								= "DPLINK_S"
+;
+; Slave-Specification:
+OrderNumber							= "PB-B-MODBUS"
+Periphery								= "DPS"
+Freeze_Mode_supp					= 1
+Sync_Mode_supp						= 1
+Min_Slave_Intervall				= 6
+Max_Diag_Data_Len				= 6;8
+Modul_Offset						= 0
+Slave_Family						= 9
+Modular_Station					= 1
+Max_Module							= 39
+Max_Input_Len						= 224
+Max_Output_Len						= 224
+Max_Data_Len						= 448
+User_Prm_Data_Len				= 8
+;Max_User_Prm_Data_Len			= 120
+Max_User_Prm_Data_Len			= 237
+Ext_User_Prm_Data_Ref(3)		= 0
+Ext_User_Prm_Data_Ref(4)		= 1
+Ext_User_Prm_Data_Ref(5)		= 2
+Ext_User_Prm_Data_Ref(6)		= 10
+Ext_User_Prm_Data_Ref(6)		= 3
+Ext_User_Prm_Data_Ref(6)		= 6
+Ext_User_Prm_Data_Ref(7)		= 42
+
+
+; Module-Definitions:
+;
+Module									= "status" 0x10
+Preset									= 1
+EndModule
+Module									= "control" 0x20
+Preset									= 1
+EndModule
+Module									= "empty" 0x00
+EndModule
+Module 									= "read 8 bits(0xxxx)" 0x10
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x08
+Ext_User_Prm_Data_Ref(0)		= 4
+Ext_User_Prm_Data_Ref(2)		= 5
+EndModule
+Module 									= "read 8 bits(1xxxx)" 0x10
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x08
+Ext_User_Prm_Data_Ref(0)		= 4
+Ext_User_Prm_Data_Ref(2)		= 5
+EndModule
+Module 									= "read 16 bits(0xxxx)" 0x11
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x10
+Ext_User_Prm_Data_Ref(0)		= 4
+Ext_User_Prm_Data_Ref(2)		= 5
+EndModule
+Module 									= "read 16 bits(1xxxx)" 0x11
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x10
+Ext_User_Prm_Data_Ref(0)		= 4
+Ext_User_Prm_Data_Ref(2)		= 5
+EndModule
+Module 									= "read 24 bits(0xxxx)" 0x12
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x18
+Ext_User_Prm_Data_Ref(0)		= 4
+Ext_User_Prm_Data_Ref(2)		= 5
+EndModule
+Module 									= "read 24 bits(1xxxx)" 0x12
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x18
+Ext_User_Prm_Data_Ref(0)		= 4
+Ext_User_Prm_Data_Ref(2)		= 5
+EndModule
+Module 									= "read 32 bits(0xxxx)" 0x13
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x20
+Ext_User_Prm_Data_Ref(0)		= 4
+Ext_User_Prm_Data_Ref(2)		= 5
+EndModule
+Module 									= "read 32 bits(1xxxx)" 0x13
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x20
+Ext_User_Prm_Data_Ref(0)		= 4
+Ext_User_Prm_Data_Ref(2)		= 5
+EndModule
+Module 									= "read 40 bits(0xxxx)" 0x14
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x28
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 40 bits(1xxxx)" 0x14
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x28
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 48 bits(0xxxx)" 0x15
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x30
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 48 bits(1xxxx)" 0x15
+Ext_Module_Prm_Data_Len		=6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x30
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 56 bits(0xxxx)" 0x16
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x38
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 56 bits(1xxxx)" 0x16
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x38
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 64 bits(0xxxx)" 0x17
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x40
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 64 bits(1xxxx)" 0x17
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x40
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 72 bits(0xxxx)" 0x18
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x48
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 72 bits(1xxxx)" 0x18
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x48
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 80 bits(0xxxx)" 0x19
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x50
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 80 bits(1xxxx)" 0x19
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x50
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 88 bits(0xxxx)" 0x1A
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x58
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 88 bits(1xxxx)" 0x1A
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x58
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 96 bits(0xxxx)" 0x1B
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x60
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 96 bits(1xxxx)" 0x1B
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x60
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 104 bits(0xxxx)" 0x1C
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x68
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 104 bits(1xxxx)" 0x1C
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x68
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 112 bits(0xxxx)" 0x1D
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x70
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 112 bits(1xxxx)" 0x1D
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x70
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 120 bits(0xxxx)" 0x1E
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x78
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 120 bits(1xxxx)" 0x1E
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x78
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 128 bits(0xxxx)" 0x1F
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x80
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 128 bits(1xxxx)" 0x1F
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x80
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 136 bits(0xxxx)" 0x1F,0x10
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x88
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 136 bits(1xxxx)" 0x1F,0x10
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x88
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 144 bits(0xxxx)" 0x1F,0x11
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x90
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 144 bits(1xxxx)" 0x1F,0x11
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x90
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 152 bits(0xxxx)" 0x1F,0x12
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0x98
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 152 bits(1xxxx)" 0x1F,0x12
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0x98
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 160 bits(0xxxx)" 0x1F,0x13
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xA0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 160 bits(1xxxx)" 0x1F,0x13
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xA0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 168 bits(0xxxx)" 0x1F,0x14
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xA8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 168 bits(1xxxx)" 0x1F,0x14
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xA8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 176 bits(0xxxx)" 0x1F,0x15
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xB0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 176 bits(1xxxx)" 0x1F,0x15
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xB0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 184 bits(0xxxx)" 0x1F,0x16
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xB8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 184 bits(1xxxx)" 0x1F,0x16
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xB8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 192 bits(0xxxx)" 0x1F,0x17
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xC0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 192 bits(1xxxx)" 0x1F,0x17
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xC0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 200 bits(0xxxx)" 0x1F,0x18
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xC8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 200 bits(1xxxx)" 0x1F,0x18
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xC8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 208 bits(0xxxx)" 0x1F,0x19
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xD0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 208 bits(1xxxx)" 0x1F,0x19
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xD0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 216 bits(0xxxx)" 0x1F,0x1A
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xD8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 216 bits(1xxxx)" 0x1F,0x1A
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xD8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 224 bits(0xxxx)" 0x1F,0x1B
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xE0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 224 bits(1xxxx)" 0x1F,0x1B
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xE0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 232 bits(0xxxx)" 0x1F,0x1C
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xE8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 232 bits(1xxxx)" 0x1F,0x1C
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xE8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 240 bits(0xxxx)" 0x1F,0x1D
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xF0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 240 bits(1xxxx)" 0x1F,0x1D
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xF0
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 248 bits(0xxxx)" 0x1F,0x1E
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x00,0xF8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 248 bits(1xxxx)" 0x1F,0x1E
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x00,0xF8
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 256 bits(0xxxx)" 0x1F,0x1F
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x01,0x00,0x00,0x01,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 256 bits(1xxxx)" 0x1F,0x1F
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x02,0x00,0x00,0x01,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 1 Words(4xxxx)" 0x50
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x01
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 1 Words(3xxxx)" 0x50
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x01
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 2 Words(4xxxx)" 0x51
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x02
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 2 Words(3xxxx)" 0x51
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x02
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 3 Words(4xxxx)" 0xD2
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x03
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 3 Words(3xxxx)" 0xD2
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x03
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 4 Words(4xxxx)" 0xD3
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x04
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 4 Words(3xxxx)" 0xD3
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x04
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 5 Words(4xxxx)" 0xD4
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x05
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 5 Words(3xxxx)" 0xD4
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x05
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 6 Words(4xxxx)" 0xD5
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x06
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 6 Words(3xxxx)" 0xD5
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x06
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module									= "read 7 Words(4xxxx)" 0xD6
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x07
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 7 Words(3xxxx)" 0xD6
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x07
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 8 Words(4xxxx)" 0xD7
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x08
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 8 Words(3xxxx)" 0xD7
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x08
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 9 Words(4xxxx)" 0xD8
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x09
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 9 Words(3xxxx)" 0xD8
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x09
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 10 Words(4xxxx)" 0xD9
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x0A
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 10 Words(3xxxx)" 0xD9
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x0A
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 11 Words(4xxxx)" 0xDA
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x0B
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 11 Words(3xxxx)" 0xDA
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x0B
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 12 Words(4xxxx)" 0xDB
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x0C
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 12 Words(3xxxx)" 0xDB
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x0C
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 13 Words(4xxxx)" 0xDC
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x0D
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 13 Words(3xxxx)" 0xDC
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x0D
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 14 Words(4xxxx)" 0xDD
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x0E
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 14 Words(3xxxx)" 0xDD
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x0E
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 15 Words(4xxxx)" 0xDE
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x0F
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 15 Words(3xxxx)" 0xDE
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x0F
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 16 Words(4xxxx)" 0xDF
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x10
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 16 Words(3xxxx)" 0xDF
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x10
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 18 Words(4xxxx)" 0xDF,0xD1
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x12
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 18 Words(3xxxx)" 0xDF,0xD1
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x12
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 20 Words(4xxxx)" 0xDF,0xD3
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x14
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 20 Words(3xxxx)" 0xDF,0xD3
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x14
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 22 Words(4xxxx)" 0xDF,0xD5
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x16
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 22 Words(3xxxx)" 0xDF,0xD5
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x16
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 24 Words(4xxxx)" 0xDF,0xD7
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x18
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 24 Words(3xxxx)" 0xDF,0xD7
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x18
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+
+Module 									= "read 26 Words(4xxxx)" 0xDF,0xD9
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)= 0x00,0x03,0x00,0x00,0x00,0x1A
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 26 Words(3xxxx)" 0xDF,0xD9
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x1A
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 28 Words(4xxxx)" 0xDF,0xDB
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x1C
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 28 Words(3xxxx)" 0xDF,0xDB
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x1C
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 30 Words(4xxxx)" 0xDF,0xDD
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x1E
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 30 Words(3xxxx)" 0xDF,0xDD
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x1E
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 32 Words(4xxxx)" 0xDF,0xDF
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x20
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 32 Words(3xxxx)" 0xDF,0xDF
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x20
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 34 Words(4xxxx)" 0xDF,0xDF,0xD1
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x22
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 34 Words(3xxxx)" 0xDF,0xDF,0xD1
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x22
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 36 Words(4xxxx)" 0xDF,0xDF,0xD3
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x24
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 36 Words(3xxxx)" 0xDF,0xDF,0xD3
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x24
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 38 Words(4xxxx)" 0xDF,0xDF,0xD5
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x26
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 38 Words(3xxxx)" 0xDF,0xDF,0xD5
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x26
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 40 Words(4xxxx)" 0xDF,0xDF,0xD7
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x28
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 40 Words(3xxxx)" 0xDF,0xDF,0xD7
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x28
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 42 Words(4xxxx)" 0xDF,0xDF,0xD9
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x2A
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 42 Words(3xxxx)" 0xDF,0xDF,0xD9
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x2A
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 44 Words(4xxxx)" 0xDF,0xDF,0xDB
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x2C
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 44 Words(3xxxx)" 0xDF,0xDF,0xDB
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x2C
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 46 Words(4xxxx)" 0xDF,0xDF,0xDD
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x2E
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 46 Words(3xxxx)" 0xDF,0xDF,0xDD
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x2E
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 48 Words(4xxxx)" 0xDF,0xDF,0xDF
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x30
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module									= "read 48 Words(3xxxx)" 0xDF,0xDF,0xDF
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x30
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 50 Words(4xxxx)" 0xDF,0xDF,0xDF,0xD1
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x32
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 50 Words(3xxxx)" 0xDF,0xDF,0xDF,0xD1
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x32
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 52 Words(4xxxx)" 0xDF,0xDF,0xDF,0xD3
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x34
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 52 Words(3xxxx)" 0xDF,0xDF,0xDF,0xD3
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x34
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 54 Words(4xxxx)" 0xDF,0xDF,0xDF,0xD5
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x36
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 54 Words(3xxxx)" 0xDF,0xDF,0xDF,0xD5
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x36
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 56 Words(4xxxx)" 0xDF,0xDF,0xDF,0xD7
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x38
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 56 Words(3xxxx)" 0xDF,0xDF,0xDF,0xD7
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x38
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 58 Words(4xxxx)" 0xDF,0xDF,0xDF,0xD9
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x3A
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 58 Words(3xxxx)" 0xDF,0xDF,0xDF,0xD9
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x3A
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 60 Words(4xxxx)" 0xDF,0xDF,0xDF,0xDB
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x03,0x00,0x00,0x00,0x3C
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "read 60 Words(3xxxx)" 0xDF,0xDF,0xDF,0xDB
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x04,0x00,0x00,0x00,0x3C
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 8 bits(0xxxx)" 0x20
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x01,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 11
+EndModule
+Module 									= "write 16 bits(0xxxx)" 0x21
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x02,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 12
+EndModule
+Module 									= "write 24 bits(0xxxx)" 0x22
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x03,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 13
+EndModule
+Module 									= "write 32 bits(0xxxx)" 0x23
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x04,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 14
+EndModule
+Module 									= "write 40 bits(0xxxx)" 0x24
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x05,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 15
+EndModule
+Module 									= "write 48 bits(0xxxx)" 0x25
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x06,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 16
+EndModule
+Module 									= "write 56 bits(0xxxx)" 0x26
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x07,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 17
+EndModule
+Module 									= "write 64 bits(0xxxx)" 0x27
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x08,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 18
+EndModule
+Module 									= "write 72 bits(0xxxx)" 0x28
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x09,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 19
+EndModule
+Module 									= "write 80 bits(0xxxx)" 0x29
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x0A,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 20
+EndModule
+Module 									= "write 88 bits(0xxxx)" 0x2A
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x0B,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 21
+EndModule
+Module 									= "write 96 bits(0xxxx)" 0x2B
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x0C,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 22
+EndModule
+Module 									= "write 104 bits(0xxxx)" 0x2C
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x0D,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 23
+EndModule
+Module 									= "write 112 bits(0xxxx)" 0x2D
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x0E,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 24
+EndModule
+Module 									= "write 120 bits(0xxxx)" 0x2E
+Ext_Module_Prm_Data_Len		=6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x0F,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 25
+EndModule
+Module 									= "write 128 bits(0xxxx)" 0x2F
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x10,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 26
+EndModule
+Module 									= "write 136 bits(0xxxx)" 0x2F,0x20
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x11,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 27
+EndModule
+Module 									= "write 144 bits(0xxxx)" 0x2F,0x21
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x12,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 28
+EndModule
+Module 									= "write 152 bits(0xxxx)" 0x2F,0x22
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x13,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 29
+EndModule
+Module 									= "write 160 bits(0xxxx)" 0x2F,0x23
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x14,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 30
+EndModule
+Module 									= "write 168 bits(0xxxx)" 0x2F,0x24
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x15,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 31
+EndModule
+Module 									= "write 176 bits(0xxxx)" 0x2F,0x25
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x16,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 32
+EndModule
+Module 									= "write 184 bits(0xxxx)" 0x2F,0x26
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x17,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 33
+EndModule
+Module 									= "write 192 bits(0xxxx)" 0x2F,0x27
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x18,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 34
+EndModule
+Module 									= "write 200 bits(0xxxx)" 0x2F,0x28
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x19,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 35
+EndModule
+Module 									= "write 208 bits(0xxxx)" 0x2F,0x29
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x1A,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 36
+EndModule
+Module 									= "write 216 bits(0xxxx)" 0x2F,0x2A
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x1B,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 37
+EndModule
+Module 									= "write 224 bits(0xxxx)" 0x2F,0x2B
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x1C,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 38
+EndModule
+Module 									= "write 232 bits(0xxxx)" 0x2F,0x2C
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x1D,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 39
+EndModule
+Module 									= "write 240 bits(0xxxx)" 0x2F,0x2D
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x1E,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 40
+EndModule
+Module 									= "write 248 bits(0xxxx)" 0x2F,0x2E
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x1F,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 41
+EndModule
+Module 									= "write 256 bits(0xxxx)" 0x2F,0x2F
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x0F,0x00,0x00,0x20,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+Ext_User_Prm_Data_Ref(5)	= 41
+EndModule
+Module 									= "write 1 Words(4xxxx)" 0x60
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x01
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 2 Words(4xxxx)" 0x61
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x02
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 3 Words(4xxxx)" 0xE2
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x03
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 4 Words(4xxxx)" 0xE3
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x04
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 5 Words(4xxxx)" 0xE4
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x05
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 6 Words(4xxxx)" 0xE5
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x06
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 7 Words(4xxxx)" 0xE6
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x07
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 8 Words(4xxxx)" 0xE7
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x08
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 9 Words(4xxxx)" 0xE8
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x09
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 10 Words(4xxxx)" 0xE9
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x0A
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 11 Words(4xxxx)" 0xEA
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x0B
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 12 Words(4xxxx)" 0xEB
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x0C
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 13 Words(4xxxx)" 0xEC
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x0D
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 14 Words(4xxxx)" 0xED
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x0E
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 15 Words(4xxxx)" 0xEE
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x0F
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 16 Words(4xxxx)" 0xEF
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x10
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 18 Words(4xxxx)" 0xEF,0xE1
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x12
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 20 Words(4xxxx)" 0xEF,0xE3
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x14
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 22 Words(4xxxx)" 0xEF,0xE5
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x16
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 24 Words(4xxxx)" 0xEF,0xE7
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x18
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 26 Words(4xxxx)" 0xEF,0x6E
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x1A
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 28 Words(4xxxx)" 0xEF,0xEB
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x1C
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 30 Words(4xxxx)" 0xEF,0xED
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x1E
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "write 32 Words(4xxxx)" 0xEF,0xEF
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x10,0x00,0x00,0x00,0x20
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+
+Module 									= "force single bit (05H Command)" 0x20
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x05,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "set single word (06H Command)" 0x60
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0x00,0x06,0x00,0x00,0x00,0x00
+Ext_User_Prm_Data_Ref(0)	= 4
+Ext_User_Prm_Data_Ref(2)	= 5
+EndModule
+Module 									= "Baudrate" 0x00
+Ext_Module_Prm_Data_Len		= 6
+Ext_User_Prm_Data_Const(0)	= 0xaa,0xaa,0xaa,0xaa,0xaa,0x02
+Ext_User_Prm_Data_Ref(5)	= 0
+EndModule
+Module 									= "MODBUS Slave Status(8 Bits)" 0x10
+Ext_Module_Prm_Data_Len		= 8
+Ext_User_Prm_Data_Const(0)	= 0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08
+EndModule
+Module 									= "MODBUS Slave Status(8 Bytes)" 0x17
+Ext_Module_Prm_Data_Len		= 8
+Ext_User_Prm_Data_Const(0)	= 0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08
+EndModule
+Module 									= "MODBUS Slave Status(16 Bits)" 0x11
+Ext_Module_Prm_Data_Len		= 16
+Ext_User_Prm_Data_Const(0)	= 0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0a,0x0b,0x0c,0x0d,0x0e,0x0f,0x10
+EndModule
+Module 									= "MODBUS Slave Status(16 Bytes)" 0x1f
+Ext_Module_Prm_Data_Len		= 16
+Ext_User_Prm_Data_Const(0)	= 0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0a,0x0b,0x0c,0x0d,0x0e,0x0f,0x10
+EndModule
+Module 									= "MODBUS Slave Status(24 Bits)" 0x12
+Ext_Module_Prm_Data_Len		= 24
+Ext_User_Prm_Data_Const(0)	= 0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0a,0x0b,0x0c,0x0d,0x0e,0x0f,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18
+EndModule
+Module 									= "MODBUS Slave Status(24 Bytes)" 0x1f,0x17
+Ext_Module_Prm_Data_Len		= 24
+Ext_User_Prm_Data_Const(0)	= 0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0a,0x0b,0x0c,0x0d,0x0e,0x0f,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18
+EndModule
+Module 									= "MODBUS Slave Status(32 Bits)" 0x13
+Ext_Module_Prm_Data_Len		= 32
+Ext_User_Prm_Data_Const(0)	= 0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0a,0x0b,0x0c,0x0d,0x0e,0x0f,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0x1a,0x1b,0x1c,0x1d,0x1e,0x1f,0x20
+EndModule
+Module 									= "MODBUS Slave Status(32 Bytes)" 0x1f,0x1f
+Ext_Module_Prm_Data_Len		= 32
+Ext_User_Prm_Data_Const(0)	= 0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0a,0x0b,0x0c,0x0d,0x0e,0x0f,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0x18,0x19,0x1a,0x1b,0x1c,0x1d,0x1e,0x1f,0x20
+EndModule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
